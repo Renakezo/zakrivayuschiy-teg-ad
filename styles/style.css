@@ -11,6 +11,10 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+	min-inline-size: 320px;
+	min-block-size: 100dvb;
+
+	background: url('../images/background.png');
+	background-size: cover;
+	background-attachment: fixed;
 }
