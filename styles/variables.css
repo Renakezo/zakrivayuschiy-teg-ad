@@ -3,4 +3,6 @@
 :root {
 	--inter-font: 'Inter';
 	--ps2p-font: 'PressStart2P';
+	--heading-card-text-width: 785;
+	--card-text-width: 400;
 }

@@ -14,6 +14,9 @@
 	min-inline-size: 320px;
 	min-block-size: 100dvb;
 
+	font-family: var(--inter-font, 'sans-serif');
+	font-variation-settings: 'wdth' var(--card-text-width);
+
 	background: url('../images/background.png');
 	background-size: cover;
 	background-attachment: fixed;
