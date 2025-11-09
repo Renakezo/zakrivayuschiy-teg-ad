@@ -1,0 +1,92 @@
+/* Здесь вы напишете основную часть стилей страницы.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+*/
+
+.page {
+	min-inline-size: 320px;
+	min-block-size: 100dvb;
+
+	font-family: var(--inter-font, 'sans-serif');
+	font-variation-settings: 'wdth' var(--card-text-width);
+
+	background: url('../images/background.png');
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.header {
+	font-family: var(--ps2p-font, 'sans-serif');
+	margin: 0 auto 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 696px;
+	height: 368px;
+	background: var(--background-color);
+	border: 1px solid var(--border-color);
+	h1 {
+		font-size: 65px;
+	}
+	h2 {
+		font-size: 23px;
+		font-weight: normal;
+		margin-top: 20px;
+		text-transform: uppercase;
+	}
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	width: 696px;
+	margin: 0 auto;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--border-color);
+	background: var(--background-color);
+
+	.card__header {
+		padding: 3px 10px;
+		.card__header-heading {
+			font-size: 18px;
+			font-weight: 785;
+		}
+	}
+
+	.card__footer {
+		padding: 25px;
+
+		.card__footer-text {
+			&:not(:last-child) {
+				margin-bottom: 27px;
+			}
+		}
+
+		.card__footer-buttons {
+			margin-top: 25px;
+			display: flex;
+			justify-content: end;
+
+			.card__icon-button {
+				width: fit-content;
+				.like-icon {
+					width: 27px;
+					height: 24px;
+				}
+			}
+		}
+	}
+}
