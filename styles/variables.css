@@ -6,7 +6,8 @@
 	--heading-card-text-width: 785;
 	--card-text-width: 400;
 	--background-color: #fff;
-	--text-color: #fff;
+	--text-color: #000;
 	--stroke-color: #fff;
 	--border-color: #000;
+	--background-modal-color: #000;
 }

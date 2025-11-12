@@ -17,38 +17,64 @@
 			<h2>Закрывающий тег</h2>
 		</header>
 		<main class="main">
-			<div class="card">
-				<div class="card__header">
-					<h3 class="card__header-heading">
-						Фритрек и нулевой спринт: Подготовка к работе
-					</h3>
-				</div>
-				<div class="card__img">
-					<img src="./images/car.png" alt="Машина" class="card__image" />
-					<div class="card__img-text">&lt;/HTML&gt;</div>
-				</div>
-				<div class="card__footer">
-					<p class="card__footer-text">
-						Это было самое начало пути. На этом этапе важно было проникнуться
-						основами и настроиться на учёбу. И, возможно, подумать, как новые
-						знания могут повлиять на ваше будущее.
-					</p>
-					<p class="card__footer-text">
-						Место для ваших воспоминаний о начале обучения.
-					</p>
-					<div class="card__footer-buttons">
-						<button class="card__icon-button">
-							<svg class="like-icon">
-								<use href="./svg/heart.svg#final">
-							</svg>
-						</button>
-						<button class="card__like-button">
-							<span class="button__text">Like</span>
-						</button>
+			<div class="cards">
+				<div class="card">
+					<div class="card__header">
+						<h3 class="card__header-heading">
+							Фритрек и нулевой спринт: Подготовка к работе
+						</h3>
+					</div>
+					<div class="card__img">
+						<img src="./images/car.png" alt="Машина" class="card__image" />
+						<div class="card__img-text">&lt;/HTML&gt;</div>
+					</div>
+					<div class="card__footer">
+						<p class="card__footer-text">
+							Это было самое начало пути. На этом этапе важно было проникнуться
+							основами и настроиться на учёбу. И, возможно, подумать, как новые
+							знания могут повлиять на ваше будущее.
+						</p>
+						<p class="card__footer-text">
+							Место для ваших воспоминаний о начале обучения.
+						</p>
+						<div class="card__footer-buttons">
+							<button class="card__icon-button">
+								<svg class="like-icon">
+									<use href="./svg/heart.svg#final" />
+								</svg>
+							</button>
+							<button class="card__like-button button">
+								<span class="button__text">Like</span>
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
+			<button
+				class="button__save button"
+				onclick="window['save__modal'].showModal();"
+			>
+				<svg class="floppy__icon" viewBox="0 0 31 31">
+					<use href="./svg/floppy.svg#floppy" />
+				</svg>
+				<span class="button__text">Сохранить на память</span>
+			</button>
 		</main>
+		<dialog class="save__modal" id="save__modal">
+			<div class="content__modal">
+				<svg class="floppy__icon" viewBox="0 0 31 31">
+					<use href="./svg/floppy.svg#floppy" />
+				</svg>
+				<span class="modal__text">Вставьте дискету, чтобы продолжить</span>
+			</div>
+
+			<button
+				class="button__OK button"
+				onclick="window['save__modal'].close();"
+			>
+				<span class="button__text">OK</span>
+			</button>
+		</dialog>
 		<script src="./scripts/like.js"></script>
 	</body>
 </html>

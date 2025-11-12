@@ -10,6 +10,49 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border-color);
+  background: var(--background-color);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.button .button__text {
+  z-index: 100;
+  font-family: var(--ps2p-font, "sans-serif");
+  font-size: 14px;
+  line-height: 90%;
+  mix-blend-mode: difference;
+}
+.button::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--border-color);
+  transition: left 0.5s ease;
+}
+.button:hover::after {
+  left: 0;
+}
+.button:hover .floppy__icon {
+  z-index: 100;
+  fill: var(--text-color);
+  mix-blend-mode: difference;
+}
+.button:hover .button__text {
+  color: var(--text-color);
+  mix-blend-mode: difference;
+}
+.button:focus {
+  box-shadow: 2px 2px 0 var(--border-color);
+}
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -18,6 +61,7 @@
   background: repeating-linear-gradient(#d3d3d3, #d3d3d3 2px, transparent 2px 4px), repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 2px 4px), linear-gradient(#e7e7e7, #1a1a1a);
   background-size: cover;
   background-attachment: fixed;
+  background-blend-mode: hard-light;
 }
 
 .header {
@@ -27,7 +71,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 696px;
+  width: 700px;
   height: 368px;
   background: var(--background-color);
   border: 2px solid var(--border-color);
@@ -46,31 +90,38 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  width: 696px;
+  width: 700px;
   margin: 0 auto;
 }
 
-.card {
+.cards {
   display: flex;
   flex-direction: column;
-  border: 3px solid var(--border-color);
+  gap: 50px;
+}
+.cards .card {
+  display: flex;
+  flex-direction: column;
   background: var(--background-color);
 }
-.card .card__header {
-  padding: 3px 10px;
+.cards .card .card__header {
+  padding: 5px 10px;
+  border: 2px solid var(--border-color);
 }
-.card .card__header .card__header-heading {
+.cards .card .card__header .card__header-heading {
   font-size: 18px;
   font-weight: 785;
 }
-.card .card__img {
+.cards .card .card__img {
+  border-left: 2px solid var(--border-color);
+  border-right: 2px solid var(--border-color);
   position: relative;
 }
-.card .card__img img {
+.cards .card .card__img img {
   width: 100%;
+  display: block;
 }
-.card .card__img .card__img-text {
+.cards .card .card__img .card__img-text {
   font-family: var(--ps2p-font, "sans-serif");
   position: absolute;
   top: 25px;
@@ -79,24 +130,77 @@
   font-size: 14px;
   text-shadow: -1px 0 var(--stroke-color), 0 1px var(--stroke-color), 1px 0 var(--stroke-color), 0 -1px var(--stroke-color);
 }
-.card .card__footer {
+.cards .card .card__footer {
   padding: 25px;
+  border: 2px solid var(--border-color);
 }
-.card .card__footer .card__footer-text:not(:last-child) {
+.cards .card .card__footer .card__footer-text {
+  line-height: 21px;
+  font-size: 18px;
+}
+.cards .card .card__footer .card__footer-text:not(:last-child) {
   margin-bottom: 27px;
 }
-.card .card__footer .card__footer-buttons {
+.cards .card .card__footer .card__footer-buttons {
   margin-top: 25px;
   display: flex;
   justify-content: end;
+  gap: 12px;
 }
-.card .card__footer .card__footer-buttons .card__icon-button {
+.cards .card .card__footer .card__footer-buttons .card__icon-button {
   width: -moz-fit-content;
   width: fit-content;
 }
-.card .card__footer .card__footer-buttons .card__icon-button .like-icon {
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon {
   width: 27px;
   height: 24px;
+}
+.cards .card .card__footer .card__footer-buttons .card__like-button {
+  width: 130px;
+  height: 38px;
+}
+.cards .card .card__footer .card__footer-buttons .card__like-button .button__text {
+  font-family: var(--ps2p-font, "sans-serif");
+  font-size: 14px;
+  line-height: 90%;
+}
+
+.button__save {
+  max-width: 335px;
+  width: 335px;
+  margin: 52px auto 100px;
+  min-height: 51px;
+  gap: 8px;
+}
+.button__save .floppy__icon {
+  width: 21px;
+  height: 21px;
+}
+.save__modal {
+  position: fixed;
+  inset: 0;
+  max-width: 353px;
+  width: 353px;
+  padding: 30px;
+  font-family: var(--ps2p-font, "sans-serif");
+  font-size: 14px;
+  line-height: 90%;
+}
+.save__modal::backdrop {
+  background: var(--background-modal-color);
+  opacity: 75%;
+}
+.save__modal .content__modal {
+  display: flex;
+  gap: 20px;
+}
+.save__modal .content__modal .floppy__icon {
+  width: 39px;
+  height: 39px;
+}
+.save__modal .button__OK {
+  width: 100%;
+  height: 38px;
 }
 
 @supports (text-stroke: 1px var(--stroke-color)) or (-webkit-text-stroke: 1px var(--stroke-color)) {
