@@ -161,51 +161,51 @@
   width: 39px;
   height: 36px;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon #sparks {
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon .sparks {
   opacity: 0;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon #core {
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon .core {
   fill: transparent;
   transition: fill 0.3s 0.03s;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon #main-body {
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon .main-body {
   fill: transparent;
   transition: fill 0.3s;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button:hover .like-icon #core {
+.cards .card .card__footer .card__footer-buttons .card__icon-button:hover .like-icon .core {
   fill: var(--icon-stroke-color);
   transition-delay: 0s;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button:hover .like-icon #main-body {
+.cards .card .card__footer .card__footer-buttons .card__icon-button:hover .like-icon .main-body {
   fill: var(--icon-stroke-color);
   transition-delay: 0.03s;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button:active .like-icon #core {
+.cards .card .card__footer .card__footer-buttons .card__icon-button:active .like-icon .core {
   fill: var(--icon-fill-color);
   transition-delay: 0s;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button:active .like-icon #main-body {
+.cards .card .card__footer .card__footer-buttons .card__icon-button:active .like-icon .main-body {
   fill: var(--icon-fill-color);
   transition-delay: 0.03s;
 }
 .cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked {
   animation: heart-zoom 0.3s ease-in 0.1s;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked #core {
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked .core {
   fill: var(--icon-fill-color);
   transition: fill 0.3s;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked #main-body {
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked .main-body {
   fill: var(--icon-fill-color);
   transition-delay: 0.03s;
   transition: fill 0.3s;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked #contour {
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked .contour {
   fill: var(--icon-fill-color);
   transition-delay: 0.06s;
   transition: fill 0.3s 0.1s;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked #sparks {
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked .sparks {
   animation: sparks 0.3s ease-in 0.3s;
 }
 .cards .card .card__footer .card__footer-buttons .card__like-button {
