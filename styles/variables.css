@@ -10,4 +10,7 @@
 	--stroke-color: #fff;
 	--border-color: #000;
 	--background-modal-color: #000;
+
+	--icon-stroke-color: #000;
+	--icon-fill-color: #ff0000;
 }

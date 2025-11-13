@@ -21,11 +21,16 @@
   transition: box-shadow 0.3s ease;
   overflow: hidden;
 }
+.button .floppy__icon {
+  color: var(--background-color);
+  mix-blend-mode: difference;
+}
 .button .button__text {
   z-index: 100;
   font-family: var(--ps2p-font, "sans-serif");
   font-size: 14px;
   line-height: 90%;
+  color: var(--background-color);
   mix-blend-mode: difference;
 }
 .button::after {
@@ -35,19 +40,13 @@
   width: 100%;
   height: 100%;
   background: var(--border-color);
-  transition: left 0.5s ease;
+  transition: left 0.3s ease;
 }
 .button:hover::after {
   left: 0;
 }
 .button:hover .floppy__icon {
   z-index: 100;
-  fill: var(--text-color);
-  mix-blend-mode: difference;
-}
-.button:hover .button__text {
-  color: var(--text-color);
-  mix-blend-mode: difference;
 }
 .button:focus {
   box-shadow: 2px 2px 0 var(--border-color);
@@ -145,15 +144,69 @@
   margin-top: 25px;
   display: flex;
   justify-content: end;
-  gap: 12px;
+  gap: 8px;
 }
 .cards .card .card__footer .card__footer-buttons .card__icon-button {
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 39px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  cursor: pointer;
 }
 .cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon {
-  width: 27px;
-  height: 24px;
+  width: 39px;
+  height: 36px;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon #sparks {
+  opacity: 0;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon #core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon #main-body {
+  fill: transparent;
+  transition: fill 0.3s;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button:hover .like-icon #core {
+  fill: var(--icon-stroke-color);
+  transition-delay: 0s;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button:hover .like-icon #main-body {
+  fill: var(--icon-stroke-color);
+  transition-delay: 0.03s;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button:active .like-icon #core {
+  fill: var(--icon-fill-color);
+  transition-delay: 0s;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button:active .like-icon #main-body {
+  fill: var(--icon-fill-color);
+  transition-delay: 0.03s;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked {
+  animation: heart-zoom 0.3s ease-in 0.1s;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked #core {
+  fill: var(--icon-fill-color);
+  transition: fill 0.3s;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked #main-body {
+  fill: var(--icon-fill-color);
+  transition-delay: 0.03s;
+  transition: fill 0.3s;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked #contour {
+  fill: var(--icon-fill-color);
+  transition-delay: 0.06s;
+  transition: fill 0.3s 0.1s;
+}
+.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked #sparks {
+  animation: sparks 0.3s ease-in 0.3s;
 }
 .cards .card .card__footer .card__footer-buttons .card__like-button {
   width: 130px;
@@ -176,6 +229,7 @@
   width: 21px;
   height: 21px;
 }
+
 .save__modal {
   position: fixed;
   inset: 0;
@@ -191,7 +245,8 @@
   opacity: 75%;
 }
 .save__modal .content__modal {
-  display: flex;
+  display: grid;
+  grid-template-columns: 39px, 1fr;
   gap: 20px;
 }
 .save__modal .content__modal .floppy__icon {
@@ -203,9 +258,53 @@
   height: 38px;
 }
 
+.image2 {
+  filter: grayscale(80%);
+}
+
+.image3 {
+  filter: saturate(400%);
+}
+
+.image4 {
+  filter: hue-rotate(25deg);
+}
+
+.image5 {
+  filter: invert(100%);
+}
+
+.image6 {
+  filter: sepia(80%);
+}
+
+.image7 {
+  filter: blur(20px);
+}
+
+.image8 {
+  filter: blur(3px) hue-rotate(70deg) sepia(50%);
+}
+
 @supports (text-stroke: 1px var(--stroke-color)) or (-webkit-text-stroke: 1px var(--stroke-color)) {
   .card__text {
     text-stroke: 1px var(--stroke-color);
     -webkit-text-stroke: 1px var(--stroke-color);
+  }
+}
+@keyframes heart-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+@keyframes sparks {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */
