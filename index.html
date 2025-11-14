@@ -541,10 +541,11 @@
 				</div>
 			</div>
 			<button
+				type="button"
 				class="button__save button"
 				onclick="window['save__modal'].showModal();"
 			>
-				<svg class="floppy__icon" viewBox="0 0 17 17">
+				<svg class="floppy__icon" viewBox="0 0 21 21">
 					<use href="./svg/floppy.svg#floppy" />
 				</svg>
 				<span class="button__text">Сохранить на память</span>
@@ -552,13 +553,14 @@
 		</main>
 		<dialog class="save__modal" id="save__modal">
 			<div class="content__modal">
-				<svg class="floppy__icon" viewBox="0 0 18 18">
+				<svg class="floppy__icon" viewBox="0 0 39 39">
 					<use href="./svg/floppy.svg#floppy" />
 				</svg>
 				<span class="modal__text">Вставьте дискету, чтобы продолжить</span>
 			</div>
 
 			<button
+				type="button"
 				class="button__OK button"
 				onclick="window['save__modal'].close();"
 			>
