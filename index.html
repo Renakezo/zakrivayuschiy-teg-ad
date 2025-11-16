@@ -542,10 +542,11 @@
 			</div>
 			<button
 				type="button"
+				aria-controls="dialog"
 				class="button__save button"
 				onclick="window['save__modal'].showModal();"
 			>
-				<svg class="floppy__icon" viewBox="0 0 21 21">
+				<svg class="floppy__icon" viewBox="0 0 39 39">
 					<use href="./svg/floppy.svg#floppy" />
 				</svg>
 				<span class="button__text">Сохранить на память</span>
@@ -553,14 +554,16 @@
 		</main>
 		<dialog class="save__modal" id="save__modal">
 			<div class="content__modal">
-				<svg class="floppy__icon" viewBox="0 0 39 39">
-					<use href="./svg/floppy.svg#floppy" />
-				</svg>
+				<div class="floppy__icon__wrapper">
+					<svg class="floppy__icon" viewBox="0 0 39 39">
+						<use href="./svg/floppy.svg#floppy" />
+					</svg>
+				</div>
 				<span class="modal__text">Вставьте дискету, чтобы продолжить</span>
 			</div>
 
 			<button
-				type="button"
+				type="submit"
 				class="button__OK button"
 				onclick="window['save__modal'].close();"
 			>

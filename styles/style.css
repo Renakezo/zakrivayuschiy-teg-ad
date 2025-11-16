@@ -57,7 +57,7 @@
   min-block-size: 100dvb;
   font-family: var(--inter-font, "sans-serif");
   font-variation-settings: "wdth" var(--card-text-width);
-  background: repeating-linear-gradient(#d3d3d3, #d3d3d3 2px, transparent 2px 4px), repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 2px 4px), linear-gradient(#e7e7e7, #1a1a1a);
+  background: var(--main-background-color);
   background-size: cover;
   background-attachment: fixed;
   background-blend-mode: hard-light;
@@ -146,68 +146,6 @@
   justify-content: end;
   gap: 8px;
 }
-.cards .card .card__footer .card__footer-buttons .card__icon-button {
-  width: 39px;
-  height: 36px;
-  padding: 0;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-  cursor: pointer;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon {
-  width: 39px;
-  height: 36px;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon .sparks {
-  opacity: 0;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon .core {
-  fill: transparent;
-  transition: fill 0.3s 0.03s;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon .main-body {
-  fill: transparent;
-  transition: fill 0.3s;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button:hover .like-icon .core {
-  fill: var(--icon-stroke-color);
-  transition-delay: 0s;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button:hover .like-icon .main-body {
-  fill: var(--icon-stroke-color);
-  transition-delay: 0.03s;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button:active .like-icon .core {
-  fill: var(--icon-fill-color);
-  transition-delay: 0s;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button:active .like-icon .main-body {
-  fill: var(--icon-fill-color);
-  transition-delay: 0.03s;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked {
-  animation: heart-zoom 0.3s ease-in 0.1s;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked .core {
-  fill: var(--icon-fill-color);
-  transition: fill 0.3s;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked .main-body {
-  fill: var(--icon-fill-color);
-  transition-delay: 0.03s;
-  transition: fill 0.3s;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked .contour {
-  fill: var(--icon-fill-color);
-  transition-delay: 0.06s;
-  transition: fill 0.3s 0.1s;
-}
-.cards .card .card__footer .card__footer-buttons .card__icon-button .like-icon.is-liked .sparks {
-  animation: sparks 0.3s ease-in 0.3s;
-}
 .cards .card .card__footer .card__footer-buttons .card__like-button {
   width: 130px;
   height: 38px;
@@ -239,6 +177,7 @@
   font-family: var(--ps2p-font, "sans-serif");
   font-size: 14px;
   line-height: 90%;
+  border: 2px solid var(--border-color);
 }
 .save__modal::backdrop {
   background: var(--background-modal-color);
@@ -249,7 +188,12 @@
   margin-bottom: 30px;
   gap: 20px;
 }
-.save__modal .content__modal .floppy__icon {
+.save__modal .content__modal .floppy__icon__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.save__modal .content__modal .floppy__icon__wrapper .floppy__icon {
   width: 39px;
   height: 39px;
 }
@@ -296,19 +240,22 @@
     -webkit-text-stroke: 1px var(--stroke-color);
   }
 }
-@keyframes heart-zoom {
-  from {
-    transform: scale(1);
+@media (max-width: 500px) {
+  .header h1 {
+    font-size: 49px;
   }
-  to {
-    transform: scale(1.25);
+  .header h2 {
+    font-size: 14px;
   }
-}
-@keyframes sparks {
-  from {
-    opacity: 0;
+  .button__save {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
   }
-  to {
-    opacity: 1;
+  .button__save .floppy__icon {
+    width: 28px;
+    height: 28px;
   }
 }/*# sourceMappingURL=style.css.map */
