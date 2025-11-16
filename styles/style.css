@@ -56,7 +56,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--inter-font, "sans-serif");
-  font-variation-settings: "wdth" var(--card-text-width);
+  font-variation-settings: "wght" var(--card-text-width), "wdth" 100;
   background: var(--main-background-color);
   background-size: cover;
   background-attachment: fixed;
@@ -109,7 +109,7 @@
 }
 .cards .card .card__header .card__header-heading {
   font-size: 18px;
-  font-weight: 785;
+  font-variation-settings: "wght" var(--card-headers-width);
 }
 .cards .card .card__img {
   border-left: 2px solid var(--border-color);
