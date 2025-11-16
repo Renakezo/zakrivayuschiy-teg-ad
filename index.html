@@ -544,9 +544,7 @@
 				type="button"
 				aria-controls="save__modal"
 				class="button__save button"
-				onclick="(e) => {
-					e.preventDefault()
-					window['save__modal'].showModal()}"
+				onclick="window['save__modal'].showModal()"
 			>
 				<svg class="floppy__icon" viewBox="0 0 39 39">
 					<use href="./svg/floppy.svg#floppy" />
@@ -567,9 +565,7 @@
 			<button
 				type="submit"
 				class="button__OK button"
-				onclick="(e) => {
-					e.preventDefault()
-					window['save__modal'].close()}"
+				onclick="window['save__modal'].close()"
 			>
 				<span class="button__text">OK</span>
 			</button>
